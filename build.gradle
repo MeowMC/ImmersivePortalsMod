@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '0.5-SNAPSHOT'
+    id 'forgified-fabric-loom' version '0.5.9'
     id 'maven-publish'
 }
 
@@ -8,7 +8,7 @@ version = project.mod_version
 group = project.maven_group
 
 subprojects {
-    apply plugin: 'fabric-loom'
+    apply plugin: 'forgified-fabric-loom'
     apply plugin: 'maven-publish'
 }
 
@@ -61,6 +61,8 @@ allprojects {
         minecraft "com.mojang:minecraft:${project.minecraft_version}"
         mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
         modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+        forge "net.minecraftforge:forge:${project.minecraft_version}-${project.forge_version}"
 
         modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
